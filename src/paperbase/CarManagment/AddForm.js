@@ -1,9 +1,11 @@
 import React from "react";
-import { TextField, Grid, Button, Box } from "@material-ui/core";
+import { TextField, Grid, Button} from "@material-ui/core";
+
+// TO-DO fix inline styles
 
 const AddForm = props => {
   return (
-    <div className="addForm" style={styles}>
+    <div className="addForm">
       <Grid
         container
         spacing={3}
@@ -11,7 +13,7 @@ const AddForm = props => {
         justify="flex-end"
         alignItems="center"
       >
-        <Grid container item xs={12} spacing={3} justify="space-evenly">
+        <Grid container item xs={12} spacing={3} justify="space-evenly" >
           <TextField
             id="manufacturer-text-field"
             label="Manufacturer"
@@ -19,6 +21,7 @@ const AddForm = props => {
             variant="outlined"
             name="manufacturer"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
           <TextField
             id="model-text-field"
@@ -27,6 +30,7 @@ const AddForm = props => {
             variant="outlined"
             name="model"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -37,6 +41,7 @@ const AddForm = props => {
             variant="outlined"
             name="fuelType"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
           <TextField
             id="coupetype-text-field"
@@ -45,6 +50,7 @@ const AddForm = props => {
             variant="outlined"
             name="coupeType"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -56,6 +62,7 @@ const AddForm = props => {
             variant="outlined"
             name="horsePower"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
           <TextField
             id="gearbox-text-field"
@@ -64,6 +71,7 @@ const AddForm = props => {
             variant="outlined"
             name="gearBox"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -74,6 +82,7 @@ const AddForm = props => {
             variant="outlined"
             name="color"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
           <TextField
             id="seatnumber-text-field"
@@ -83,22 +92,26 @@ const AddForm = props => {
             variant="outlined"
             name="seatNumber"
             className="textField"
+            style={{margin: "4px 0px"}}
           />
         </Grid>
-      </Grid>
-      <Box m={3}>
+
+        <Grid container item xs={12} justify="center" alignItems={"center"}>
         <Button
           size="large"
           variant="contained"
           color="primary"
-          style={{ marginLeft: "15.3%", marginRight: "10px" }}
+          style={{margin: "0px 30px"}}
         >
           Save
         </Button>
-        <Button size="large" variant="contained" color="primary">
+        <Button size="large" variant="contained" color="primary" style={{margin: "0px 10px"}}>
           Clear
         </Button>
-      </Box>
+        </Grid>
+      </Grid>
+
+
     </div>
   );
 };
