@@ -12,6 +12,7 @@ import Link from "@material-ui/core/Link";
 import Navigator from "./Navigator";
 import CarBrowser from "./CarManagment/Browser";
 import AddCar from "./CarManagment/Add";
+import Header from "./Header";
 
 function Copyright() {
   return (
@@ -166,22 +167,22 @@ const styles = {
 };
 
 function Paperbase(props) {
+  // Add more pages as components here:
+  const componentMap = [
+    { id: "Browser", component: <CarBrowser />, description: "Browse Cars" },
+    { id: "Add", component: <AddCar />, description: "Add Cars" }
+  ];
+
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [content, setContent] = React.useState(<CarBrowser />);
+  const [content, setContent] = React.useState(componentMap[0]);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  // Add more pages as components here:
-  const componentMap = [
-    { id: "Browser", component: <CarBrowser /> },
-    { id: "Add", component: <AddCar /> }
-  ];
-
   const handleTabChange = id => {
-    setContent(componentMap.find(e => e.id === id).component);
+    setContent(componentMap.find(e => e.id === id));
   };
 
   return (
@@ -206,7 +207,11 @@ function Paperbase(props) {
           </Hidden>
         </nav>
         <div className={classes.app}>
-          <main className={classes.main}>{content}</main>
+          <Header
+            onDrawerToggle={handleDrawerToggle}
+            text={content.description}
+          />
+          <main className={classes.main}>{content.component}</main>
           <footer className={classes.footer}>
             <Copyright />
           </footer>
