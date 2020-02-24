@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Navigator from './Navigator';
 import CarBrowser from './CarManagment/Browser';
+import AddCar from './CarManagment/Add';
 
 function Copyright() {
   return (
@@ -163,9 +164,21 @@ const styles = {
 function Paperbase(props) {
   const { classes } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [content, setContent] = React.useState(<CarBrowser/>);
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  // Add more pages as components here:
+  const componentMap = [
+  {id: "Browser", component: <CarBrowser/>},
+  {id: "Add", component: <AddCar/>},
+  ];
+
+  const handleTabChange = (id) => {
+    setContent(componentMap.find(e => e.id === id).component);
   };
 
   return (
@@ -179,15 +192,16 @@ function Paperbase(props) {
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
+              handleTabChange={handleTabChange}
             />
           </Hidden>
           <Hidden xsDown implementation="css">
-            <Navigator PaperProps={{ style: { width: drawerWidth } }} />
+            <Navigator PaperProps={{ style: { width: drawerWidth } }} handleTabChange={handleTabChange}/>
           </Hidden>
         </nav>
         <div className={classes.app}>
           <main className={classes.main}>
-            <CarBrowser />
+            {content}
           </main>
           <footer className={classes.footer}>
             <Copyright />
