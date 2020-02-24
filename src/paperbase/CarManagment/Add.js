@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
-import { Paper, TextField } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import AddForm from "./AddForm";
 
@@ -49,9 +49,7 @@ class Add extends Component {
     return (
       <Paper className={classes.paper}>
         <div className={classes.contentWrapper}>
-          <Typography color="textSecondary" align="center">
-            <AddForm />
-          </Typography>
+          <AddForm />
         </div>
       </Paper>
     );
