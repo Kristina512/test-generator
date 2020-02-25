@@ -20,7 +20,6 @@ const AddForm = props => {
           <TextField
             id="manufacturer-text-field"
             label="Manufacturer"
-            defaultValue=""
             variant="outlined"
             name="manufacturer"
             className="textField"
@@ -31,7 +30,6 @@ const AddForm = props => {
           <TextField
             id="model-text-field"
             label="Model"
-            defaultValue=""
             variant="outlined"
             name="model"
             className="textField"
@@ -44,7 +42,6 @@ const AddForm = props => {
           <TextField
             id="fueltype-text-field"
             label="Fuel Type"
-            defaultValue=""
             variant="outlined"
             name="fuelType"
             className="textField"
@@ -55,7 +52,6 @@ const AddForm = props => {
           <TextField
             id="coupetype-text-field"
             label="Coupe Type"
-            defaultValue=""
             variant="outlined"
             name="coupeType"
             className="textField"
@@ -69,7 +65,6 @@ const AddForm = props => {
             id="horsepower-text-field"
             label="Horse Power"
             type="number"
-            defaultValue=""
             variant="outlined"
             name="horsePower"
             className="textField"
@@ -80,7 +75,6 @@ const AddForm = props => {
           <TextField
             id="gearbox-text-field"
             label="Gear Box Type"
-            defaultValue=""
             variant="outlined"
             name="gearBoxType"
             className="textField"
@@ -93,7 +87,6 @@ const AddForm = props => {
           <TextField
             id="color-text-field"
             label="Color"
-            defaultValue=""
             variant="outlined"
             name="colour"
             className="textField"
@@ -105,7 +98,6 @@ const AddForm = props => {
             id="seatnumber-text-field"
             label="Number of seats"
             type="number"
-            defaultValue=""
             variant="outlined"
             name="seatNumber"
             className="textField"
@@ -121,6 +113,7 @@ const AddForm = props => {
             variant="contained"
             color="primary"
             style={{ margin: "15px 30px" }}
+            onClick={() => props.handleSave()}
           >
             Save
           </Button>
