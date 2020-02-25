@@ -31,16 +31,36 @@ class Add extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      manufacturer: null,
-      model: null,
-      fuelType: null,
-      coupeType: null,
-      horsePower: null,
-      gearboxType: null,
-      colour: null,
-      seatNumber: null
+      manufacturer: "",
+      model: "",
+      fuelType: "",
+      coupeType: "",
+      horsePower: "",
+      gearBoxType: "",
+      colour: "",
+      seatNumber: ""
     };
   }
+
+  handleInput = event => {
+    let newState = { ...this.state[event.target.name] };
+    newState = event.target.value;
+    this.setState({ [event.target.name]: newState });
+  };
+
+  handleClear = () => {
+    let newState = {
+      manufacturer: "",
+      model: "",
+      fuelType: "",
+      coupeType: "",
+      horsePower: "",
+      gearBoxType: "",
+      colour: "",
+      seatNumber: ""
+    };
+    this.setState(newState);
+  };
 
   render() {
     const { classes } = this.props;
@@ -48,7 +68,11 @@ class Add extends Component {
     return (
       <Paper className={classes.paper}>
         <div className={classes.contentWrapper}>
-          <AddForm />
+          <AddForm
+            handleInput={this.handleInput}
+            handleClear={this.handleClear}
+            {...this.state}
+          />
         </div>
       </Paper>
     );

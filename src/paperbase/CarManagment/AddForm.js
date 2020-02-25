@@ -3,7 +3,7 @@ import { TextField, Grid, Button } from "@material-ui/core";
 
 // TO-DO fix inline styles
 const textFieldStyle = {
-  margin: "4px 0px"
+  margin: "1% 0%"
 };
 
 const AddForm = props => {
@@ -25,6 +25,8 @@ const AddForm = props => {
             name="manufacturer"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.manufacturer}
           />
           <TextField
             id="model-text-field"
@@ -34,6 +36,8 @@ const AddForm = props => {
             name="model"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.model}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -45,6 +49,8 @@ const AddForm = props => {
             name="fuelType"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.fuelType}
           />
           <TextField
             id="coupetype-text-field"
@@ -54,6 +60,8 @@ const AddForm = props => {
             name="coupeType"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.coupeType}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -66,15 +74,19 @@ const AddForm = props => {
             name="horsePower"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.horsePower}
           />
           <TextField
             id="gearbox-text-field"
             label="Gear Box Type"
             defaultValue=""
             variant="outlined"
-            name="gearBox"
+            name="gearBoxType"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.gearBoxType}
           />
         </Grid>
         <Grid container item xs={12} spacing={3} justify="space-evenly">
@@ -83,9 +95,11 @@ const AddForm = props => {
             label="Color"
             defaultValue=""
             variant="outlined"
-            name="color"
+            name="colour"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.colour}
           />
           <TextField
             id="seatnumber-text-field"
@@ -96,6 +110,8 @@ const AddForm = props => {
             name="seatNumber"
             className="textField"
             style={textFieldStyle}
+            onChange={event => props.handleInput(event)}
+            value={props.seatNumber}
           />
         </Grid>
 
@@ -113,6 +129,7 @@ const AddForm = props => {
             variant="contained"
             color="primary"
             style={{ margin: "15px 10px" }}
+            onClick={() => props.handleClear()}
           >
             Clear
           </Button>
