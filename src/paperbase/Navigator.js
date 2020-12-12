@@ -9,7 +9,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
-import DriveEta from "@material-ui/icons/DriveEta";
+import ReceiptIcon from '@material-ui/icons/Receipt';
+import ContactsIcon from '@material-ui/icons/Contacts';
 
 const styles = theme => ({
   categoryHeader: {
@@ -58,10 +59,10 @@ class Navigator extends Component {
     this.state = {
       categories: [
         {
-          id: "Car Management",
           children: [
-            { id: "Browser", icon: <DriveEta />, active: true },
-            { id: "Add", icon: <DriveEta />, active: false }
+            { id: "Home", icon: <HomeIcon/>, active: true },
+            { id: "Generator", icon: <ReceiptIcon/>, active: false },
+            { id: "Contacts", icon: <ContactsIcon />, active: false }
           ]
         }
       ]
@@ -80,7 +81,7 @@ class Navigator extends Component {
               classes.itemCategory
             )}
           >
-            Paperbase
+            Test Generator
           </ListItem>
           <ListItem className={clsx(classes.item, classes.itemCategory)}>
             <ListItemIcon className={classes.itemIcon}>

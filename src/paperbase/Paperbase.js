@@ -10,9 +10,10 @@ import Hidden from "@material-ui/core/Hidden";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
 import Navigator from "./Navigator";
-import CarBrowser from "./CarManagment/Browser";
-import AddCar from "./CarManagment/Add";
 import Header from "./Header";
+import Home from "./TestGenerator/Home";
+import Generator from "./TestGenerator/Generator";
+import Contacts from "./TestGenerator/Contacts";
 
 function Copyright() {
   return (
@@ -169,8 +170,9 @@ const styles = {
 function Paperbase(props) {
   // Add more pages as components here:
   const componentMap = [
-    { id: "Browser", component: <CarBrowser />, description: "Browse Cars" },
-    { id: "Add", component: <AddCar />, description: "Add Cars" }
+    { id: "Home", component: <Home />, description: "Home" },
+    { id: "Generator", component: <Generator />, description: "Generator" },
+    { id: "Contacts", component: <Contacts />, description: "Contacts" }
   ];
 
   const { classes } = props;
