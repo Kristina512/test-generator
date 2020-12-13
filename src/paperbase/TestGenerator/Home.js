@@ -3,6 +3,7 @@ import {Paper} from "@material-ui/core";
 import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 
+//This is Frontend (CSS)
 const styles = theme => ({
     paper: {
         maxWidth: 936,
@@ -23,10 +24,15 @@ const styles = theme => ({
     },
     contentWrapper: {
         margin: "40px 16px"
-    }
+    },
+    button1: {
+        backgroundcolor: "blue"
+    },
 });
+//END OF FRONTEND
 
 
+//THIS IS BACKEND (Node.js)
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -38,7 +44,14 @@ class Home extends Component {
         return (
             <Paper className={classes.paper}>
                 <div className={classes.contentWrapper}>
-                    {/* Add more to the page here*/}
+                    {
+                        <div class="Buttons">
+                            <button id="About" marginRight="10px">About</button>
+                            <button id="Register" margin="auto">Register</button>
+                            <button id="Login" margin="auto">Login</button>
+                            <button id="KYS" margin="auto">I want to die </button>
+                        </div>
+                    }
                 </div>
             </Paper>)
     }
