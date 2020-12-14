@@ -45,13 +45,11 @@ class Generator extends Component {
 
     getRandomTest() {
         var shuffled = shuffle(this.state.questions);
-        this.setState({questions: shuffled});
         var sliced = shuffled.slice(0, this.state.numberOfQuestions);
         sliced.forEach(e => {
             shuffle(e.answers);
         })
-        this.setState({showQuestions: sliced});
-        this.forceUpdate()
+        this.setState({questions: shuffled, showQuestions: sliced});
     }
 
     onRadioChange(qId, aValue) {
