@@ -82,9 +82,9 @@ class Generator extends Component {
 
 
                     {
-                        this.state.showQuestions != null ? shuffle(this.state.showQuestions.map(e => (
+                        this.state.showQuestions != null ? this.state.showQuestions.map(e => (
                             <Box my={5} key={e.id}><Question key={e.id} question={e.question} selectedAnswerId={e.selectedAnswerId}
-                                                  answers={e.answers}/></Box>))) : null
+                                                  answers={e.answers}/></Box>)) : null
                     }
                     {/*TO-DO
                      1 - Read questions from file X
