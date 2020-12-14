@@ -83,7 +83,7 @@ class Generator extends Component {
                             }}
                             style={{marginLeft: "2em", marginRight: "2em"}}
                         />
-                        <Button style={{marginLeft: "2em", marginRight: "2em"}} endIcon={<SettingsIcon/>}
+                        <Button style={{marginLeft: "2em", marginRight: "2em"}} endIcon={<SettingsIcon/>} size={"large"}
                                 variant="contained" color="primary" onClick={() => this.getRandomTest()}>
                             GENERATE
                         </Button>
