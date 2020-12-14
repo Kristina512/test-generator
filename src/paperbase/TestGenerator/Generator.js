@@ -5,6 +5,7 @@ import {Box, Button, Paper, TextField} from "@material-ui/core";
 import {historyQuestions} from "./tests/History";
 import Question from "./Question";
 import Grid from "@material-ui/core/Grid";
+import SettingsIcon from '@material-ui/icons/Settings';
 
 const styles = theme => ({
     paper: {
@@ -82,9 +83,9 @@ class Generator extends Component {
                             }}
                             style={{marginLeft: "2em", marginRight: "2em"}}
                         />
-                        <Button style={{marginLeft: "2em", marginRight: "2em"}}
+                        <Button style={{marginLeft: "2em", marginRight: "2em"}} endIcon={<SettingsIcon/>}
                                 variant="contained" color="primary" onClick={() => this.getRandomTest()}>
-                            Generate
+                            GENERATE
                         </Button>
                     </Grid>
 
