@@ -53,6 +53,14 @@ class Generator extends Component {
         this.forceUpdate()
     }
 
+    onRadioChange(qId, aValue) {
+        const questionsData = this.state.showQuestions;
+        let t = questionsData.find(e => e.id === qId);
+        const answer = t.answers.find(e => e.value === aValue)
+        t.selectedAnswerId = answer.id;
+        this.setState({showQuestions: questionsData});
+    }
+
     render() {
         const {classes} = this.props;
 
@@ -83,8 +91,8 @@ class Generator extends Component {
 
                     {
                         this.state.showQuestions != null ? this.state.showQuestions.map(e => (
-                            <Box my={5} key={e.id}><Question key={e.id} question={e.question} selectedAnswerId={e.selectedAnswerId}
-                                                  answers={e.answers}/></Box>)) : null
+                            <Box my={5} key={e.id}><Question id={e.id} key={e.id} question={e.question} selectedAnswerId={e.selectedAnswerId}
+                                                  answers={e.answers} onChange={(qId, aValue) => this.onRadioChange(qId, aValue)}/></Box>)) : null
                     }
                     {/*TO-DO
                      1 - Read questions from file X

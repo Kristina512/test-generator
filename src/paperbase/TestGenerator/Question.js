@@ -17,10 +17,10 @@ const Question = props => {
                     <FormLabel component="legend">
                     <Typography gutterBottom variant="h5" component="h2">{props.question}</Typography>
                     </FormLabel>
-                    <RadioGroup defaultValue={props.answers.find(e => e.id === props.selectedAnswerId).id}
-                                name="customized-radios">
+                    <RadioGroup
+                                name="customized-radios" onChange={(event => props.onChange(props.id, event.target.value))}>
                         {props.answers.map(e =>
-                            <FormControlLabel key={e.id} value={e.id} control={<Radio/>} label={e.value}/>
+                            <FormControlLabel key={e.id} value={e.value} control={<Radio/>} label={e.value}/>
                         )}
                     </RadioGroup>
                 </FormControl>
